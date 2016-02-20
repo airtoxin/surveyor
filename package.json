@@ -2,10 +2,10 @@
   "name": "surveyor",
   "version": "0.0.1",
   "description": "take a desktop screenshot regularly",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "transpile": "babel src/ -d dist/",
-    "build": "npm run transpile && electron dist/index.js",
+    "build": "npm run transpile && electron .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
