@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "transpile": "babel src/ -d dist/",
-    "build": "npm run transpile && electron .",
+    "start": "npm run transpile && electron .",
+    "build": "electron-packager . Surveyor --platform=darwin --arch=x64 --icon=icon.png",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
