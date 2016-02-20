@@ -1,3 +1,6 @@
+# Application
+dist/
+
 # Logs
 logs
 *.log
