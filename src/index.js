@@ -1,21 +1,15 @@
 import menubar from "menubar";
-import zpad from "zpad"
-import { exec } from "child_process";
-
-const FILE_DIR = "~/Desktop/sc/"
 
 const mb = menubar({
     icon: `${process.cwd()}/icon.png`
 });
 
-let counter = 0;
-const takeScreenshot = () => {
-    counter++;
-    console.log(`screencapture -x -t jpg ${FILE_DIR}test_${zpad(counter, 3)}.jpg`);
-};
-
 mb.on("ready", () => {
-    setInterval(takeScreenshot, 1000);
+    // setInterval(takeScreenshot, 1000);
+});
+
+mb.on("after-create-window", () => {
+    mb.window.openDevTools();
 });
 
 // create mov
