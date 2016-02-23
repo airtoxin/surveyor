@@ -1,24 +1,17 @@
 import React from "react";
 import P from "react-photonkit";
+import { root } from "baobab-react/higher-order";
+import tree from "./tree";
 import Settings from "./settings";
 
-export default class Main extends React.Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            settings: {
-                run: false
-            }
-        };
-    }
-
+class Main extends React.Component {
     render() {
         return (
             <P.Window>
                 <P.Toolbar title="Surveyor settings" />
                 <P.Content>
                     <div style={{padding: "20px"}}>
-                        <Settings refs="settings" settings={this.state.settings} />
+                        <Settings />
                     </div>
                 </P.Content>
                 <P.Toolbar psType="footer">
@@ -31,3 +24,5 @@ export default class Main extends React.Component {
         );
     }
 }
+
+export default root(Main, tree);
